@@ -22,7 +22,6 @@ import coil.compose.rememberAsyncImagePainter
 
 @Composable
 fun MainUI(data: NetworkResult, navController: NavController){
-    Log.e("TestPoint","5")
     Greeting(
         data = data,
         navController=navController
@@ -31,8 +30,6 @@ fun MainUI(data: NetworkResult, navController: NavController){
 
 @Composable
 fun Greeting(data: NetworkResult, navController: NavController, modifier: Modifier = Modifier) {
-    Log.e("TestPoint","6"+(data.data.data==null))
-
     if (data.data.data == null) {
         Text(
             modifier = modifier,
@@ -40,12 +37,10 @@ fun Greeting(data: NetworkResult, navController: NavController, modifier: Modifi
         )
     } else {
         LazyColumn {
-            Log.e("TestPoint","7")
             items(data.itemsList) { item ->
                 Row(verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier.padding(12.dp)
                         .clickable(true) {
-                            Log.e("TAG!","Click! "+item.idIndex)
                             navController.navigate("ItemDetails/"+item.idIndex)
                         }) {
                     Image(

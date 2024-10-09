@@ -40,7 +40,6 @@ class MainActivity : ComponentActivity() {
                 val currentBackStack by navController.currentBackStackEntryAsState()
                 val currentDestination = currentBackStack?.destination
                 val viewModel = MainActivityViewModel()
-//                ScaffoldDefaults.contentWindowInsets
                 Scaffold { innerPadding ->
                     Box(Modifier.padding(innerPadding)){
                         var shouldLoadData=remember { mutableStateOf(true) }
@@ -59,7 +58,6 @@ class MainActivity : ComponentActivity() {
                             composable(route="ItemDetails/{idIndex}"){
                                 val itemID=currentBackStack?.arguments?.getString("idIndex")
                                 if (itemID!=null){
-                                    Log.e("ID", ""+itemID)
                                     viewModel.fromDatabase(this@MainActivity.applicationContext, itemID.toInt())
                                 }
                                 DetailsUI(recipe = item)

@@ -24,7 +24,6 @@ import coil.compose.rememberAsyncImagePainter
 fun DetailsUI(recipe: Recipe?){
     Scaffold(modifier = Modifier
         .fillMaxSize()) { innerPadding ->
-        Log.e("ITEM", ""+recipe)
         if (recipe!=null) {
             Column(Modifier.fillMaxSize().padding(innerPadding)
                 ) {//.verticalScroll(rememberScrollState(1))

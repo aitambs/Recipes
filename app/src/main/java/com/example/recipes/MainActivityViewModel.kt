@@ -35,7 +35,6 @@ class MainActivityViewModel: ViewModel() {
 
     fun fromDatabase(context: Context, idIndex: Int){
         viewModelScope.launch(Dispatchers.IO){
-            Log.e("VM", "id is: $idIndex")
             mutableState2.value=RecipesDatabase.get(context).dao().getRecipe(idIndex)
         }
     }

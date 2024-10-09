@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Recipes</string>
+    <string name="fats">Fats: %1$s</string>
+    <string name="calories">Calories: %1$s</string>
+    <string name="carbs">Carbs: %1$s</string>
+
+</resources>
